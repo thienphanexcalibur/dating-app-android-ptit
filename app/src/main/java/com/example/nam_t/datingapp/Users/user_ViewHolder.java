@@ -12,9 +12,6 @@ import com.example.nam_t.datingapp.SelectedProfileActivity;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-/**
- * Created by nam_t on 13-Jan-18.
- */
 
 public class user_ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
     public String selectedID;

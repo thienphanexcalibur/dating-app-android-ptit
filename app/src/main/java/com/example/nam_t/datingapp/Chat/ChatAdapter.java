@@ -17,10 +17,6 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-/**
- * Created by khanhnguyen on 1/15/18.
- */
-
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder>{
 
     ArrayList<ChatObject> chatOnjects;

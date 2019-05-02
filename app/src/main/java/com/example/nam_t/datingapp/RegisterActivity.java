@@ -31,10 +31,6 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by nam_t on 10-Jan-18.
- */
-
 public class RegisterActivity extends AppCompatActivity {
     private Button mRegister;
     private EditText mEmail, mPassword, mName;

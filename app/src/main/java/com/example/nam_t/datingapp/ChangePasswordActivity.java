@@ -13,11 +13,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-/**
- * Created by nam_t on 18-Jan-18.
- */
-
 public class ChangePasswordActivity extends AppCompatActivity {
 
 

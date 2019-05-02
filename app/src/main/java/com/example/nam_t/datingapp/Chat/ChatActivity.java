@@ -40,10 +40,6 @@ import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-/**
- * Created by khanhnguyen on 1/14/18.
- */
-
 public class ChatActivity extends AppCompatActivity{
 
     private String currentUserID, currentUserProfileUrl, matchId, profileMatchUrl, chatId;

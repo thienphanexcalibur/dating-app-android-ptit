@@ -19,9 +19,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.Map;
 
-/**
- * Created by nam_t on 13-Jan-18.
- */
 
 public class SelectedProfileActivity extends AppCompatActivity{
     private ImageView user_img;
