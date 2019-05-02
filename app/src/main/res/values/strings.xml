@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Date now</string>
+    <string name="tab_text_1">Profile</string>
+    <string name="tab_text_2">User list</string>
+    <string name="tab_text_3">Message</string>
+    <string name="action_settings">Settings</string>
+    <string name="login">LOG IN</string>
+</resources>
