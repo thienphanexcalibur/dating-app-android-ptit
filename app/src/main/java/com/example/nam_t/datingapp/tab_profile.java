@@ -240,7 +240,7 @@ public class tab_profile extends Fragment {
 
     public boolean validateForm(String name, String day, String month, String year, String bio) {
         if(name.length() <= 0 || name.length() > 35) return false;
-        if(bio.length() <= 0 || bio.length() > 100) return false;
+        if(bio.length() > 100) return false;
 
         int getDay = Integer.parseInt(day);
         int getMonth = Integer.parseInt(month);
