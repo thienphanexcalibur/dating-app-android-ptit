@@ -333,11 +333,11 @@ public class ChatActivity extends AppCompatActivity{
                     Picasso.with(getApplicationContext()).load(dataSnapshot.child("profileImageUrl").getValue().toString())
                             .into(imgUserToolbar);
                 }
-
-                if(dataSnapshot.child("online").getValue().equals(true)) {
+                DataSnapshot onlineStatus = dataSnapshot.child("online");
+                if(onlineStatus.getValue() == null) {
                     onlineToolbar.setText("Online");
                 } else {
-                    onlineToolbar.setText("Last online: " + dataSnapshot.child("online").getValue().toString());
+                    onlineToolbar.setText("Last online: " + onlineStatus.getValue().toString());
                 }
 
             }

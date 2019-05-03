@@ -13,9 +13,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-/**
- *  nam_t on 16-Jan-18.
- */
 
 public class match_Adapter extends RecyclerView.Adapter<match_ViewHolder>{
     private List<match_Object> matchesList;
