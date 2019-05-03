@@ -8,11 +8,15 @@ public class match_Object {
     private String userId;
     private String name;
     private String profileImageUrl;
+
     public match_Object (String userId, String name, String profileImageUrl){
         this.userId = userId;
         this.name = name;
         this.profileImageUrl = profileImageUrl;
+
     }
+
+
 
     public String getUserId(){
         return userId;

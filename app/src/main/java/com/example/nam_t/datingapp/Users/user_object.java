@@ -9,12 +9,23 @@ public class user_object {
     private String user_name;
     private String user_age;
     private String user_ProfileImgURL;
-    public user_object(String userID, String user_name, String user_age, String user_ProfileImgURL){
+    private double distance;
+    public user_object(String userID, String user_name, String user_age, String user_ProfileImgURL,double distance){
         this.userID=userID;
         this.user_name=user_name;
         this.user_age=user_age;
         this.user_ProfileImgURL=user_ProfileImgURL;
+        this.distance=distance;
     }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
+    }
+
+    public double getDistance() {
+        return distance;
+    }
+
     public String getUserID(){ return userID;}
     public void setUserID(String userID){this.userID=userID;}
 

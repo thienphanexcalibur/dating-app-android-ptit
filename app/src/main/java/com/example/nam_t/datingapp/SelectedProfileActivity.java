@@ -25,7 +25,7 @@ import java.util.Map;
 
 public class SelectedProfileActivity extends AppCompatActivity{
     private ImageView user_img;
-    private TextView user_name,user_dd,user_mm,user_yy,user_bio;
+    private TextView user_name,user_dd,user_mm,user_yy,user_bio,user_distance;
     private Button btnLike;
     private String currentUId,userID,profileImageUrl;
     private FirebaseAuth mAuth;
@@ -43,6 +43,8 @@ public class SelectedProfileActivity extends AppCompatActivity{
         user_mm=findViewById(R.id.user_mm);
         user_yy=findViewById(R.id.user_yy);
         user_bio=findViewById(R.id.user_bio);
+        user_distance=findViewById(R.id.user_distance);
+
         btnLike=findViewById(R.id.btn_like);
 
         btnGender = (Button) findViewById(R.id.btnGender);

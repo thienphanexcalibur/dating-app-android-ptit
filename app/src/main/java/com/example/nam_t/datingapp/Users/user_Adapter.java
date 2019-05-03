@@ -35,6 +35,7 @@ public class user_Adapter extends RecyclerView.Adapter<user_ViewHolder> {
         holder.selectedID = user_list.get(position).getUserID();
         holder.mName.setText(user_list.get(position).getUser_name());
         holder.mAge.setText("Age: "+ user_list.get(position).getUser_age());
+        holder.mDistance.setText("Distance: "+user_list.get(position).getDistance());
         if(!user_list.get(position).getUser_ProfileImgURL().equals("")) {
             Picasso.with(context).load(user_list.get(position).getUser_ProfileImgURL()).into(holder.mPic);
         }else {

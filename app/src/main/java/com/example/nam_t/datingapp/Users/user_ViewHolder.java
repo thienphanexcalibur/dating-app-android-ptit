@@ -18,7 +18,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class user_ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
     public String selectedID;
-    public TextView mName,mAge;
+    public TextView mName,mAge,mDistance;
     public CircleImageView mPic;
     public user_ViewHolder(View itemView){
         super(itemView);
@@ -26,6 +26,7 @@ public class user_ViewHolder extends RecyclerView.ViewHolder implements View.OnC
         mName=itemView.findViewById(R.id.user_name);
         mAge=itemView.findViewById(R.id.user_age);
         mPic=itemView.findViewById(R.id.user_pic);
+        mDistance=itemView.findViewById(R.id.user_distance);
     }
     public void onClick(View view){
         Intent intent=new Intent(view.getContext(),SelectedProfileActivity.class);
