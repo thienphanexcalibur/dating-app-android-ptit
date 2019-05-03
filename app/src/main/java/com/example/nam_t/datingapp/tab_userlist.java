@@ -124,10 +124,10 @@ public class tab_userlist extends Fragment {
         usersDb.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                if (dataSnapshot.exists() && dataSnapshot.child("gender").getValue().toString().equals(oppositeUserGender)) {
+                if (dataSnapshot.child("gender").getValue() instanceof String && dataSnapshot.child("gender").getValue().toString().equals(oppositeUserGender)) {
                     int userAge=Calendar.getInstance().get(Calendar.YEAR)-Integer.parseInt(dataSnapshot.child("DOB_yyyy").getValue().toString());
                     if (userAge<=max&&userAge>=min) {
-                        user_object item = new user_object(dataSnapshot.getKey(), dataSnapshot.child("name").getValue().toString(),String.valueOf(userAge),dataSnapshot.child("profileImageUrl").getValue().toString());
+                        user_object item = new user_object(dataSnapshot.getKey(), dataSnapshot.child("name").getValue() instanceof String ? dataSnapshot.child("name").getValue().toString() : "",String.valueOf(userAge),dataSnapshot.child("profileImageUrl").getValue().toString());
                         userList.add(item);
                         userListAdapter.notifyDataSetChanged();
                     }
