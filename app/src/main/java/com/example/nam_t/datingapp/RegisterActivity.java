@@ -1,8 +1,14 @@
 package com.example.nam_t.datingapp;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,7 +21,10 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -36,7 +45,8 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText mEmail, mPassword, mName;
     private EditText dd,mm,yy;
     private String mDOB;
-
+    private FusedLocationProviderClient fusedLocationClient;
+    private DatabaseReference mUserDatabase;
     private RadioGroup mRadioGroup;
 
     private FirebaseAuth mAuth;
@@ -155,6 +165,43 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
+        try{
+            String currentUId = mAuth.getCurrentUser().getUid();
+            mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users")
+                    .child(currentUId);
+            fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+            LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
+            fusedLocationClient.getLastLocation()
+                    .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                        @Override
+                        public void onSuccess(Location location) {
+                            // Got last known location. In some rare situations this can be null.
+                            if (location != null) {
+                                //Toast.makeText(MainActivity.this, (int) location.getLatitude(),Toast.LENGTH_LONG).show();
+                                //EditText text = (EditText) findViewById(R.id.editText);
+                                //text.setText(String.format(String.valueOf(location.getLatitude())));
+                                //System.out.println("The location is: "+location.getLatitude());
+                                mUserDatabase.child("longtitude").setValue(location.getLongitude());
+                                mUserDatabase.child("latitude").setValue(location.getLatitude());
+                            }
+                        }
+                    });
+        }
+        catch(Exception e){
+
+        }
         mAuth.removeAuthStateListener(firebaseAuthStateListener);
     }
 }
