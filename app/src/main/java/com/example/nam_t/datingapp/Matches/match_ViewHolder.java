@@ -11,10 +11,6 @@ import com.example.nam_t.datingapp.R;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-/**
- * Created by nam_t on 16-Jan-18.
- */
-
 public class match_ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
     public TextView mMatchName;
     public String mMatchId;

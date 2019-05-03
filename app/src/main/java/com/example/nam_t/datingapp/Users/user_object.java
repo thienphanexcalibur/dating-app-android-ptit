@@ -1,9 +1,5 @@
 package com.example.nam_t.datingapp.Users;
 
-/**
- * Created by nam_t on 13-Jan-18.
- */
-
 public class user_object {
     private String userID;
     private String user_name;

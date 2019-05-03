@@ -11,10 +11,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-/**
- * Created by nam_t on 13-Jan-18.
- */
-
 public class user_Adapter extends RecyclerView.Adapter<user_ViewHolder> {
     private List<user_object> user_list;
     private Context context;
