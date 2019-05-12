@@ -12,38 +12,43 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/chatToolbar">
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/new_login_gradients">
+            android:background="#e1060c">
+
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgUserToolbar"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:src="@drawable/ic_person_black_48dp"
-                android:id="@+id/imgUserToolbar"/>
+                android:src="@drawable/ic_person_black_48dp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginLeft="25dp">
+                android:layout_marginLeft="25dp"
+                android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/txtNameToolbar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#fff"
-                    android:textStyle="italic"
                     android:layout_weight="5"
-                    android:padding="0dp"/>
+                    android:padding="0dp"
+                    android:textColor="#fff"
+                    android:textStyle="italic" />
+
                 <TextView
                     android:id="@+id/onlineToolbar"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:textColor="#fff"
-                    android:textStyle="italic"
                     android:layout_weight="6"
-                    android:padding="0dp"/>
+                    android:padding="0dp"
+                    android:textColor="#fff"
+                    android:textStyle="italic" />
             </LinearLayout>
 
         </android.support.v7.widget.Toolbar>
@@ -70,15 +75,17 @@
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:id="@+id/type_message_area">
+
         <EditText
+            android:id="@+id/txtSend"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColorHint="#dedede"
-            android:textColor="#333"
-            android:paddingLeft="10dp"
             android:hint="Write a message"
-            android:id="@+id/txtSend"/>
+            android:paddingLeft="10dp"
+            android:textColor="#333"
+            android:textColorHint="#dedede"
+            android:textColorLink="#e1060c" />
 
         <ImageView
             android:layout_width="match_parent"

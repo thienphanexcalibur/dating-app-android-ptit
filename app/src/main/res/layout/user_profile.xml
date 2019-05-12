@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/new_login_gradients"
+    android:background="@color/cardview_light_background"
     android:orientation="vertical">
 
     <LinearLayout
@@ -11,86 +11,97 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
             <Button
-                android:background="@android:color/transparent"
+                android:id="@+id/btnGender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:textColor="#fff"
-                android:id="@+id/btnGender"
-                android:clickable="false"/>
+                android:background="@android:color/transparent"
+                android:clickable="false"
+                android:textColor="#fff" />
+
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="35dp"
+                android:id="@+id/imgUserImg"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:src="@drawable/ic_person_black_48dp"
-                android:id="@+id/imgUserImg" />
-            <TextView
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="35dp"
+                android:src="@drawable/ic_person_black_48dp" />
+
+            <TextView
+                android:id="@+id/txtNameProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="21sp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:textColor="#fff"
-                android:textStyle="bold"
-                android:id="@+id/txtNameProfile"/>
+                android:textSize="21sp"
+                android:textStyle="bold" />
         </LinearLayout>
+
         <android.support.v7.widget.CardView
             android:layout_width="200dp"
             android:layout_height="30dp"
             android:layout_centerHorizontal="true"
-            android:layout_margin="20dp"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp">
+
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:orientation="horizontal"
                 android:weightSum="3">
+
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:gravity="center"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <TextView
                         android:id="@+id/user_dd"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/startBlue"
                         android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/startBlue"/>
+                        android:textStyle="bold" />
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:gravity="center"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <TextView
                         android:id="@+id/user_mm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/startBlue"
                         android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/startBlue"/>
+                        android:textStyle="bold" />
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:gravity="center"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <TextView
                         android:id="@+id/user_yy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/startBlue"
                         android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/startBlue"/>
+                        android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -101,24 +112,24 @@
         android:id="@+id/user_bio"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textAlignment="center"
-        android:textColor="#ffffff"
         android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="20sp"
 
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <Button
-        android:paddingRight="15dp"
-        android:paddingLeft="15dp"
         android:id="@+id/btn_like"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
         android:background="@drawable/background_login"
+        android:paddingLeft="15dp"
 
-        android:textColor="#fff"
+        android:paddingRight="15dp"
         android:text="Like"
-        android:layout_gravity="center_horizontal"/>
+        android:textColor="#fff" />
 
 </LinearLayout>
